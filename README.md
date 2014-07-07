@@ -4,5 +4,6 @@
 
 ```bash
 git clone https://github.com/petitviolet/vimp-plugins ~/tmp
-ln -s ~/tmp/vimp-plugins/* ~/.vimperator/plugin/ 
+cd ~/tmp/vimp-plugins
+sh add_vimp_plugins.sh
 ```
