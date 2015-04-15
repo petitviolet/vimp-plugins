@@ -16,18 +16,18 @@
     }
   }
 
-  var HandleSlideShare = (function() {
+  var HandleSlideShare = function() {
     var doc = content.document;
     if (doc.location.host !== 'www.slideshare.net') {
-      return liberator.echoerr('This is not slideshare... here is ' + doc.location.host);
+      return liberator.echoerr('Here is not slideshare...: here is ' + doc.location.host);
     }
     var obj = doc.wrappedJSObject;
     var leftPoint = obj.querySelector('.leftpoint');
-    var rightPoint = obj.querySelector('.leftpoint');
+    var rightPoint = obj.querySelector('.rightpoint');
     var fullScreenPoint = obj.querySelector('#btnFullScreen');
     var player = new SlidePlayer(leftPoint, rightPoint, fullScreenPoint);
     return player;
-  })();
+  };
 
   liberator.modules.commands.addUserCommand(
     ['slideshare'],
@@ -36,11 +36,11 @@
     {
       subCommands: [
         new Command(['n[ext]'], 'Go next page',
-                    function() {HandleSlideShare.next()}),
+                    function() {HandleSlideShare().next()}),
         new Command(['p[rev]'], 'Go prev page',
-                    function() {HandleSlideShare.prev()}),
+                    function() {HandleSlideShare().prev()}),
         new Command(['f[ullscreen]'], 'Toggle fullscreen',
-                    function() {HandleSlideShare.fullscreen()})
+                    function() {HandleSlideShare().fullscreen()})
       ]
     },
     true
