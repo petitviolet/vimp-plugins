@@ -10,7 +10,7 @@
 
       // make "and" query
       var query = args.join("+");
-      var youtubeUrl = 'http://qiita.com/search?utf8=✓&sort=rel&q='
+      var youtubeUrl = 'http://qiita.com/search?utf8=✓&sort=rel&stocked=1&q='
       // open in a new tab
       liberator.open(youtubeUrl + query, liberator.NEW_TAB);
       return false;
