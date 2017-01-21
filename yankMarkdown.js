@@ -14,6 +14,7 @@
         markdown = `[${selection}](${url})`;
       }
       util.copyToClipboard(markdown);
+      liberator.echo(`yanked! ${markdown}`);
       return false;
     },
     {},
