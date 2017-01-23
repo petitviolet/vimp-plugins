@@ -22,8 +22,8 @@
       return liberator.echoerr('Here is not slideshare...: here is ' + doc.location.host);
     }
     var obj = doc.wrappedJSObject;
-    var leftPoint = obj.querySelector('.leftpoint');
-    var rightPoint = obj.querySelector('.rightpoint');
+    var leftPoint = obj.querySelector('#btnPrevious');
+    var rightPoint = obj.querySelector('#btnNext');
     var fullScreenPoint = obj.querySelector('#btnFullScreen');
     var player = new SlidePlayer(leftPoint, rightPoint, fullScreenPoint);
     return player;
